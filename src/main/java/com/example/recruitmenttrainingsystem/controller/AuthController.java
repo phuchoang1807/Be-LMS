@@ -28,7 +28,7 @@ public class AuthController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<?> login(@Valid @RequestBody LoginRequest req) {
+    public ResponseEntity<?> login(@Valid  @RequestBody LoginRequest req) {
         return ResponseEntity.ok(userService.login(req));
     }
     @PostMapping("/forgot-password")
@@ -42,5 +42,6 @@ public class AuthController {
         userService.resetPassword(request);
         return ResponseEntity.ok("Đổi mật khẩu thành công.");
     }
+
 
 }

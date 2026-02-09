@@ -1,14 +1,18 @@
-
 package com.example.recruitmenttrainingsystem.dto;
 
-import jakarta.validation.constraints.*;
-import lombok.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 
-@Getter @Setter
 public class LoginRequest {
-    @Email @NotBlank
+
+    @NotBlank(message = "Email không được để trống")
+    @Email(message = "Email không đúng định dạng")
     private String email;
 
-    @NotBlank
+    @NotBlank(message = "Password không được để trống")
+    @Size(min = 6, message = "Password phải có ít nhất 6 ký tự")
     private String password;
+
+    // getter & setter
 }
